@@ -1,0 +1,14 @@
+---
+
+# This Playbook prints Hello World
+
+- hosts: all
+  gather_facts: False
+  become: yes
+  become_method: sudo
+  remote_user: "{{ admin_username }}"
+
+  tasks:
+    - name: Hello World!
+      debug:
+        msg: Hello World!
