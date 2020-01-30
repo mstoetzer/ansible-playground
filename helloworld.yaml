@@ -12,6 +12,10 @@
     - name: foo
       raw: env
       delegate_to: localhost
+      
+    - name: foobar
+      raw: "ls -al {{ ANSIBLE_SSH_CONTROL_PATH_DIR }}"
+      delegate_to: localhost
   
     - name: Whoami
       raw: id
