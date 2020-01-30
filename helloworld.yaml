@@ -8,18 +8,13 @@
   become_method: sudo
   remote_user: "{{ admin_username }}"
 
-  tasks:
-    - name: foo
-      raw: env
-      delegate_to: localhost
-      
-    - name: foobar
-      raw: ls -al $ANSIBLE_SSH_CONTROL_PATH_DIR
-      delegate_to: localhost
-      
+  tasks:      
     - name: DISPLAY THE INJECTED EXTRA VAR
       debug:
         var: secret_key
+        
+    - name: DISPLAY THE INJECTED EXTRA VAR
+      raw: "cat {{ secret_key }}"
   
     - name: Whoami
       raw: id
