@@ -9,13 +9,6 @@
   remote_user: "{{ admin_username }}"
 
   tasks:      
-    - name: DISPLAY THE INJECTED EXTRA VAR
-      debug:
-        var: secret_key
-        
-    - name: DISPLAY THE INJECTED EXTRA VAR
-      raw: "cat {{ secret_key }}"
-  
     - name: Whoami
       raw: id
       register: whoami_on_host
