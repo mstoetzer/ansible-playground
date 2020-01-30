@@ -9,6 +9,10 @@
   remote_user: "{{ admin_username }}"
 
   tasks:
+    - name: foo
+      raw: env
+      delegate_to: localhost
+  
     - name: Whoami
       raw: id
       register: whoami_on_host
