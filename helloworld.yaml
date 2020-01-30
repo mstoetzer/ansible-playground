@@ -18,8 +18,8 @@
       delegate_to: localhost
       
     - name: DISPLAY THE INJECTED EXTRA VAR
-    debug:
-      var: secret_key
+      debug:
+        var: secret_key
   
     - name: Whoami
       raw: id
