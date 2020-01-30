@@ -12,3 +12,8 @@
     - name: Hello World!
       debug:
         msg: Hello World!
+
+    - name: List Home Dir
+      raw: ls -al ~
+      args:
+        executable: /bin/bash
