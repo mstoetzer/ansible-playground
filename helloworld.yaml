@@ -10,9 +10,9 @@
 
   tasks:      
     - name: Whoami
-      raw: id
-      register: whoami_on_host
+      raw: ls /
+      register: output
 
     - name: Display username
       debug:
-        msg: "{{ whoami_on_host }}"
+        msg: "{{ output }}"
