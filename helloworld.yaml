@@ -9,7 +9,10 @@
   remote_user: "{{ admin_username }}"
 
   tasks:
-    - name: List Home Dir
-      raw: ls -al ~
-      args:
-        executable: /bin/bash
+    - name: Whoami
+      raw: id
+      register: whoami_on_host
+
+    - name: Display username
+      debug:
+        msg: "{{ whoami_on_host }}"
